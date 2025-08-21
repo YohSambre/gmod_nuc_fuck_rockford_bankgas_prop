@@ -8,7 +8,7 @@ hook.Add("OnEntityCreated", "fuck_atm_gas_prop", function(eEntity)
         if not IsValid(eEntity) then return end
 
         if tModels[eEntity:GetModel()] then
-            eEntity:Remove()
+            SafeRemoveEntityDelayed(eEntity, 0)
         end
     end)
 end)
